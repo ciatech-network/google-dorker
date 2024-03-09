@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Dork Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    
+    <div class="container">
+        <div class="dark-mode-toggle">
+            <button id="toggleDarkMode">Toggle Dark Mode</button>
+        </div>
+        <h1>Google Dork Query Generator</h1>
+        <input type="text" id="urlInput" placeholder="Enter a URL..." class="url-input">
+        <button id="generateButton" class="generate-btn">Generate</button>
+        <div id="results" class="results">
+            <!-- Predefined Google Dork queries with placeholders {url} -->
+            <div class="result-item">site:{url}</div>
+            <div class="result-item">intitle:"index of /" {url}</div>
+            <div class="result-item">inurl:admin {url}</div>
+            <div class="result-item">filetype:txt + "password" {url}</div>
+            <div class="result-item">intext:"database" filetype:sql {url}</div>
+            <div class="result-item">site:{url} filetype:pdf intext:"confidential"</div>
+            <div class="result-item">inurl:{url} AND intext:"email" AND filetype:xlsx</div>
+            <div class="result-item">site:{url} intitle:"database" filetype:sql</div>
+            <div class="result-item">inurl:{url} AND inurl:"login" AND intext:"admin"</div>
+            <div class="result-item">site:{url} intitle:"index of" AND inurl:"wp-content/uploads"</div>
+            <div class="result-item">site:{url} AND filetype:env AND intext:"DB_PASSWORD"</div>
+            <div class="result-item">site:{url} AND intext:"@gmail.com" AND intitle:"contact"</div>
+            <div class="result-item">inurl:{url} AND filetype:log AND intext:"password"</div>
+            <div class="result-item">site:{url} AND inurl:"config" AND filetype:xml</div>
+            <div class="result-item">inurl:{url} AND inurl:"phpinfo.php"</div>
+            <div class="result-item">site:{url} AND filetype:doc AND intext:"sensitive but unclassified"</div>
+            <div class="result-item">site:{url} AND intitle:"error log" AND filetype:txt</div>
+            <div class="result-item">inurl:{url} AND inurl:"debug" AND filetype:php</div>
+            <div class="result-item">site:{url} AND intext:"index of /" AND filetype:cfg</div>
+            <div class="result-item">site:{url} AND inurl:"/admin/" AND intext:"login"</div>
+            <div class="result-item">inurl:{url} AND filetype:bkf AND intext:"backup"</div>
+            <div class="result-item">site:{url} AND intitle:"web server status" AND filetype:txt</div>
+            <div class="result-item">inurl:{url} AND intitle:"cPanel" AND intext:"login" AND inurl:"port"</div>
+            <div class="result-item">site:{url} AND inurl:"/phpMyAdmin" AND intitle:"Welcome to phpMyAdmin"</div>
+            <div class="result-item">inurl:{url} AND filetype:yml AND intext:"password"</div>
+            <div class="result-item">site:{url} AND intext:"vulnerability" AND filetype:pdf</div>
+            <div class="result-item">inurl:{url} AND inurl:"/cgi-bin/" AND filetype:txt</div>
+            <div class="result-item">site:{url} AND inurl:"/error_log" AND filetype:txt</div>
+            <div class="result-item">inurl:{url} AND inurl:"/config/" AND filetype:ini</div>
+            <div class="result-item">site:{url} AND filetype:sql AND intext:"dump"</div>
+            <div class="result-item">inurl:{url} AND intitle:"index of" AND inurl:"/backup"</div>
+            <div class="result-item">site:{url} AND inurl:"/secure/attachment/" AND filetype:pdf</div>
+            <div class="result-item">inurl:{url} AND inurl:"user" AND intext:"password" AND filetype:txt</div>
+            <div class="result-item">site:{url} AND intitle:"usage statistics" AND intext:"browser"</div>
+            <div class="result-item">inurl:{url} AND inurl:"/portal/web" AND intext:"login"</div>
+            <div class="result-item">inurl:{url} filetype:pdf intext:"confidential"</div>
+            <div class="result-item">site:{url} filetype:xls | filetype:xlsx intext:"email contacts"</div>
+            <div class="result-item">inurl:{url} intitle:"dashboard" AND inurl:"/dashboard/"</div>
+            <div class="result-item">site:{url} intext:"confidential" filetype:pdf | filetype:doc | filetype:xls</div>
+            <div class="result-item">inurl:{url} AND inurl:"/admin/" filetype:asp | filetype:php</div>
+            <div class="result-item">site:{url} intitle:"index of" AND inurl:"/logs"</div>
+            <div class="result-item">inurl:{url} "server at" filetype:txt</div>
+            <div class="result-item">inurl:{url} filetype:sql intext:password | user | username</div>
+            <div class="result-item">inurl:{url} intext:"setup" filetype:txt</div>
+            <div class="result-item">site:{url} inurl:wp- | inurl:plugin | inurl:uploads | inurl:themes | inurl:download</div>
+            <div class="result-item">inurl:{url} ext:php intitle:phpinfo "published by the PHP Group"</div>
+            <div class="result-item">site:{url} ext:cfg | ext:txt intext:"enable password"</div>
+            <div class="result-item">inurl:{url} ext:log "software version"</div>
+            <div class="result-item">inurl:{url} "index of" "my backup" | "my site" | "my files"</div>
+            <div class="result-item">inurl:{url} ext:xml | ext:conf intext:password | API | key | token</div>
+            <div class="result-item">site:{url} inurl:debug intitle:"debug"</div>
+            <div class="result-item">inurl:{url} ext:action | ext:struts | ext:do</div>
+            <div class="result-item">site:{url} intext:"index of /private"</div>
+            <div class="result-item">inurl:{url} intitle:"Error Log" filetype:log</div>
+            <div class="result-item">site:{url} filetype:xls | filetype:xlsx intext:email | phone | address</div>
+            <div class="result-item">inurl:{url} "server at" intitle:index.of</div>
+            <div class="result-item">site:{url} inurl:CVS | inurl:.svn | inurl:.git</div>
+            <div class="result-item">inurl:{url} intitle:"Apache2 Ubuntu Default Page: It works"</div>
+            <div class="result-item">inurl:{url} ext:svc | ext:asmx wsdl</div>
+            <div class="result-item">site:{url} inurl:trace.axd intitle:"Trace Console"</div>
+            <div class="result-item">inurl:{url} intitle:"Object not found!"</div>
+            <div class="result-item">inurl:{url} inurl:"id" | inurl:"category" | inurl:"name" intitle:"index of"</div>
+            <div class="result-item">inurl:{url} intext:"setup"</div>
+            <div class="result-item">site:{url} inurl:"/api/" filetype:json</div>
+            <div class="result-item">site:{url} inurl:"config" | inurl:"db" filetype:yml</div>
+            <div class="result-item">inurl:{url} ext:action | ext:struts | ext:do</div>
+            <div class="result-item">site:{url} intext:"environment" filetype:env</div>
+            <div class="result-item">site:{url} inurl:"debug" filetype:log</div>
+            <div class="result-item">site:{url} intitle:"index of" inurl:"/logs"</div>
+            <div class="result-item">site:{url} -inurl:(htm|html|php|pls|txt) intitle:index.of “last modified” (mp4|wma|aac|avi)</div>
+            <div class="result-item">inurl:{url} intitle:"dashboard" inurl:"/dashboard"</div>
+            <div class="result-item">site:{url} inurl:"/cgi-bin/" | inurl:"/cgi-bin/?page="</div>
+
+
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
